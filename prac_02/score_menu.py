@@ -48,7 +48,7 @@ def get_remark(score):
 def main():
     """Main function, execute functions calls depending on choice"""
     choice = ""
-    score = 0
+    score = get_score()
     while choice != "Q":
         display_menu()
         choice = get_choice()
