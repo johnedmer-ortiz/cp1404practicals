@@ -1,17 +1,17 @@
+
 def main():
-    """password with error checking"""
-    min_pass_len = 10
-    password = input("Enter password: ")
-    pass_check = error_check(password, min_pass_len)
-    while pass_check == False:
+    """checks if user's password meets the length requirement"""
+    pass_limit = 10 # minimum number of characters
+    password = get_password()
+    pass_len = len(password)
+    while pass_len < pass_limit:
         print("Password does not meet the requirements.")
-        password = input("Enter password: ")
-        pass_check = error_check(password, min_pass_len)
-    print("*" * len(password))
-def error_check(password, min_pass_len):
-    """password length checker"""
-    if len(password)>= min_pass_len:
-        return True
-    return False
+        get_password()
+    print("*" * pass_len)
+
+def get_password():
+    """returns password from user input"""
+    password = input("Enter password: ")
+    return password
 
 main()
