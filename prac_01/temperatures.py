@@ -1,5 +1,5 @@
 def main():
-    """Displays menu and prompts the user for input"""
+    """Displays menu and prompts for user input"""
     MENU = "C - Convert Celsius to Fahrenheit \nF - Convert Fahrenheit to Celsius \nQ - Quit"
     print(MENU)
     choice = input(">>> ").upper()
