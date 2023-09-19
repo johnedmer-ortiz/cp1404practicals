@@ -1,6 +1,6 @@
 
 def main():
-    """checks if user's password meets the length requirement"""
+    """checks if user's password meets the length requirement in a loop"""
     pass_limit = 10 # minimum number of characters
     password = get_password()
     pass_len = len(password)
