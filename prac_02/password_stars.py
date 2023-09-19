@@ -6,12 +6,16 @@ def main():
     pass_len = len(password)
     while pass_len < pass_limit:
         print("Password does not meet the requirements.")
-        get_password()
-    print("*" * pass_len)
+        pass_len = len(get_password())
+    print_asterisk(pass_len)
 
 def get_password():
     """returns password from user input"""
     password = input("Enter password: ")
     return password
+
+def print_asterisk(pass_len):
+    """prints number of asterisks according to the number of password characters"""
+    print("*" * pass_len)
 
 main()
