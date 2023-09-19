@@ -18,13 +18,13 @@ def display_stars(score):
 
 
 def get_score():
-    score = float(input("Enter score:"))
+    score = int(input("Enter score:"))
     return score
 
 
 def get_choice():
     choice = input(">>")
-    return choice
+    return choice.upper()
 
 
 def get_remark(score):
@@ -51,6 +51,8 @@ def main():
             get_remark(score)
         elif choice == "S":
             display_stars(score)
+        elif choice == "Q":
+            display_goodbye()
         else:
             display_invalid_input()
 
