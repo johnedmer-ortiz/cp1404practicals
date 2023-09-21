@@ -21,9 +21,13 @@ def display_stars(score):
     print("*" * score)
 
 
-def get_score():
+def get_valid_score():
     """prompts user for score input and returns it"""
+    score = -1
     score = int(input("Enter score:"))
+    while score < 0 or score > 100:
+        print("Invalid score")
+        score = int(input("Enter score:"))
     return score
 
 
@@ -35,9 +39,7 @@ def get_choice():
 
 def get_remark(score):
     """Evaluates score and displays corresponding remark string"""
-    if score < 0 or score > 100:
-        print("Invalid score")
-    elif score >= 90:
+    if score >= 90:
         print("Excellent")
     elif score >= 50:
         print("Passable")
