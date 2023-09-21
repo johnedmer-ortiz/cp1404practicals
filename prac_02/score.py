@@ -1,3 +1,7 @@
+"""
+score input and random score generator - prac02
+"""
+
 from random import *
 
 

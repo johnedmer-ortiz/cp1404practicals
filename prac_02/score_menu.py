@@ -1,3 +1,27 @@
+"""
+Score menu - prac02
+"""
+
+
+def main():
+    """Main function, execute functions calls depending on choice"""
+    choice = ""
+    score = get_valid_score()
+    while choice != "Q":
+        display_menu()
+        choice = get_choice()
+        if choice == "G":
+            score = get_valid_score()
+        elif choice == "P":
+            get_remark(score)
+        elif choice == "S":
+            display_stars(score)
+        elif choice == "Q":
+            display_goodbye()
+        else:
+            display_invalid_input()
+
+
 def display_menu():
     """Displays menu"""
     print("""(G)et score
@@ -45,25 +69,6 @@ def get_remark(score):
         print("Passable")
     else:
         print("Bad")
-
-
-def main():
-    """Main function, execute functions calls depending on choice"""
-    choice = ""
-    score = get_score()
-    while choice != "Q":
-        display_menu()
-        choice = get_choice()
-        if choice == "G":
-            score = get_score()
-        elif choice == "P":
-            get_remark(score)
-        elif choice == "S":
-            display_stars(score)
-        elif choice == "Q":
-            display_goodbye()
-        else:
-            display_invalid_input()
 
 
 main()

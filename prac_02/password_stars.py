@@ -1,3 +1,8 @@
+"""
+print password stars - prac_02
+"""
+
+
 def main():
     """checks if user's password meets the length requirement in a loop"""
     pass_limit = 10  # minimum number of characters
