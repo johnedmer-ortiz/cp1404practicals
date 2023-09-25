@@ -18,3 +18,10 @@ for i in range(2):
     result = result + int(out_file.readline())
 print(result)
 out_file.close()
+
+out_file = open("numbers.txt", "r")
+result = 0
+for line in out_file:
+    result = int(line) + result
+print(result)
+out_file.close()
