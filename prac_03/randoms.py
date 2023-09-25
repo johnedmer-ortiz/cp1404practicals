@@ -10,3 +10,7 @@
 # what was the largest? largest is 9
 # Could line 2 have produced a 4? no, the code has a step distance of 2, the number 4 is skipped
 
+# print(random.uniform(2.5, 5.5))
+# What did you see on line 3? it printed random floats at range of [2.5, 5.5) or [2.5, 5.5] depending on rounding
+# What was the smallest number you could have seen? help() says 2.5
+# What was the largest? help() says 5.5
