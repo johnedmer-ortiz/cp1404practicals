@@ -3,7 +3,7 @@ CP1404 - prac_03 - files
 """
 
 name = input("Enter name: ")
-file_name = name + ".txt"
-out_file = open(file_name, "w")
+out_file = open("name.txt", "w")
 print(f"{name}", file=out_file)
 out_file.close()
+
