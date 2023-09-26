@@ -1,6 +1,5 @@
 """
-CP1404/CP5632 - Practical
-Password checker "skeleton" code to help you get started
+CP1404 - prac_03 - possword checker
 """
 
 MIN_LENGTH = 4
