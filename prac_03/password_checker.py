@@ -44,7 +44,7 @@ def is_valid_password(password):
         if char.isupper():
             count_upper = count_upper + 1
         if char.isdigit():
-            count_digit = count_digit + +1
+            count_digit = count_digit + 1
         pass
 
 
