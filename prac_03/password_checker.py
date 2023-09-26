@@ -53,6 +53,11 @@ def is_valid_password(password):
 
     # TODO: if special characters are required, then check the count of those
     # and return False if it's zero
+    for i in range(pass_len):
+        if password[i] in SPECIAL_CHARACTERS:
+            count_special = count_special + 1
+
+
 
     # if we get here (without returning False), then the password must be valid
     return True
