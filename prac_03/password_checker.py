@@ -1,5 +1,5 @@
 """
-CP1404 - prac_03 - possword checker
+CP1404 - prac_03 - password checker
 """
 
 MIN_LENGTH = 4
@@ -43,7 +43,6 @@ def is_valid_password(password):
         if char.isdigit():
             count_digit = count_digit + 1
 
-
     if count_lower == 0 or count_upper == 0 or count_digit == 0:
         return False
 
@@ -62,5 +61,6 @@ def is_valid_password(password):
 
     # if we get here (without returning False), then the password must be valid
     return True
+
 
 main()
