@@ -51,6 +51,8 @@ def is_valid_password(password):
     for i in range(pass_len):
         if password[i] in SPECIAL_CHARACTERS:
             count_special = count_special + 1
+    if count_special == 0:
+        return False
 
     print(f"# total chars: {pass_len}")
     print(f"# of lower case chars: {count_lower}")
