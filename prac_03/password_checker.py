@@ -57,10 +57,13 @@ def is_valid_password(password):
         if password[i] in SPECIAL_CHARACTERS:
             count_special = count_special + 1
 
-
+    print(f"# total chars: {pass_len}")
+    print(f"# of lower case chars: {count_lower}")
+    print(f"# of upper case chars: {count_upper}")
+    print(f"# of upper digits: {count_digit}")
+    print(f"# of special chars: {count_special}")
 
     # if we get here (without returning False), then the password must be valid
     return True
-
 
 main()
