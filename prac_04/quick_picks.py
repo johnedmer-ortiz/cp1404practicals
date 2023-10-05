@@ -13,4 +13,5 @@ for i in range(number_of_picks):
 quick_picks = tuple(quick_picks)
 
 for picks in quick_picks:
-    print(str(picks).strip("()"))
+    print(" ".join(f"{number: 3}" for number in picks))
+
