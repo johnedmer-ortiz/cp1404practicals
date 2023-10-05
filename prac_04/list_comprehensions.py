@@ -38,6 +38,7 @@ numbers = [int(almost_number) for almost_number in almost_numbers]
 
 # TODO: list comprehension to create a list of only the numbers that are
 # greater than 9 from the numbers (not strings) you just created
+numbers_over_nine = [number for number in numbers if number > 9]
 
 # TODO: (more advanced) use a list comprehension and the join string method
 # to create a string (not list) of the last names for those full names longer than 11 characters
