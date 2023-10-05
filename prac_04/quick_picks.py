@@ -12,4 +12,5 @@ for i in range(number_of_picks):
 
 quick_picks = tuple(quick_picks)
 
-    #print(str(quick_picks[i]).strip("()"))
+for picks in quick_picks:
+    print(str(picks).strip("()"))
