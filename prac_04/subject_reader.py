@@ -9,6 +9,7 @@ FILENAME = "subject_data.txt"
 def main():
     data = get_data()
     print(data)
+    print_entries(data)
 
 
 def get_data():
@@ -26,6 +27,13 @@ def get_data():
         entries.append(parts)
         print("----------")
     input_file.close()
+    return entries
+
+
+def print_entries(data):
+    """Formats and displays each entry in the data variable"""
+    for entry in data:
+        print(f"{entry[0]} is taught by {entry[1]} and has {entry[2]} students")
 
 
 main()
