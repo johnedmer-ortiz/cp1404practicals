@@ -12,8 +12,7 @@ for i in range(number_of_picks):
     while len(unique_numbers) != 6:  # this loop block is for checking repetition and length of the list(checking block)
         random_numbers = [random.randint(1, 45) for j in range(6)]
         unique_numbers = [number for number in random_numbers if number not in unique_numbers]
-    quick_picks.append(tuple(
-        sorted(unique_numbers)))  # adds tuples(converted from lists) that passes the requirements to quick_picks array
+    quick_picks.append(tuple(sorted(unique_numbers)))  # appends passed tuples to quick_picks
 
 quick_picks = tuple(quick_picks)  # converts the quick_picks list itself to tuple
 
