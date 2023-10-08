@@ -13,3 +13,6 @@ for word in phrase:
 
 max_width = max([len(word) for word in words])
 print(max_width)
+
+counts = [0 for i in range(len(words))]
+word_to_count = dict(zip(sorted(words), counts))
