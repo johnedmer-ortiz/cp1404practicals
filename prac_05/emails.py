@@ -10,8 +10,10 @@ def main():
 def extract_name(email):
     name = email.split("@")[0]
     check_name = input(f"Is your name {name}? (Y/N)").upper()
-    if check_name == "" or check_name == "Y":
+    if check_name == "" or check_name == "Y" or "YES":
         return name
+    else:
+        return input("Name:")
 
 
 main()
