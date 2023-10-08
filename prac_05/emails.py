@@ -1,3 +1,8 @@
+"""
+CP1404 - prac_05 - email dictionary
+"""
+
+
 def main():
     """Main function"""
     email_to_name = {}
@@ -9,6 +14,7 @@ def main():
 
 
 def extract_name(email):
+    """Extracts names from email or user input"""
     name = email.split("@")[0]
     check_name = input(f"Is your name {name}? (Y/N)").upper()
     if check_name == "" or check_name == "Y" or check_name == "YES":
@@ -18,6 +24,7 @@ def extract_name(email):
 
 
 def display_emails(email_to_name):
+    """Lists all names and corresponding email addresses"""
     print("")
     for email, name in email_to_name.items():
         print(f"{name} ({email})")
