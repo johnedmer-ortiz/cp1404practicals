@@ -35,7 +35,6 @@ def create_winners_list(games):
 
 
 def count_scores(champions, games):
-    champion_to_win = {}
     win = [0 for champion in range(len(champions))]
     champion_to_win = dict(zip(champions, win))
     for game in games:
