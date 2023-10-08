@@ -19,3 +19,6 @@ word_to_count = dict(zip(sorted(words), counts))
 for word in phrase:
     if word in word_to_count:
         word_to_count[word] += 1
+
+for word in word_to_count:
+    print(f"{word:{max_width}}: {word_to_count[word]}")
