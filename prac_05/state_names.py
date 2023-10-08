@@ -21,6 +21,7 @@ for state in CODE_TO_NAME.keys():
 #         print("Invalid short state")
 #     state_code = input("Enter short state: ").upper()
 
+
 # EAFP CODE
 state_code = input("Enter short state: ").upper()
 while state_code != "":
