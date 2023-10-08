@@ -12,10 +12,20 @@ print(CODE_TO_NAME)
 for state in CODE_TO_NAME.keys():
     print(f"{state} is {CODE_TO_NAME[state]}")
 
+# LBYL CODE
+# state_code = input("Enter short state: ").upper()
+# while state_code != "":
+#     if state_code in CODE_TO_NAME:
+#         print(state_code, "is", CODE_TO_NAME[state_code])
+#     else:
+#         print("Invalid short state")
+#     state_code = input("Enter short state: ").upper()
+
+# EAFP CODE
 state_code = input("Enter short state: ").upper()
 while state_code != "":
-    if state_code in CODE_TO_NAME:
+    try:
         print(state_code, "is", CODE_TO_NAME[state_code])
-    else:
+    except KeyError:
         print("Invalid short state")
     state_code = input("Enter short state: ").upper()
