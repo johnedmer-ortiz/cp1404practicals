@@ -1,8 +1,18 @@
 def main():
     games = create_games_list()
     champions, countries = create_winners_list(games)
+    countries = sorted(countries)
     champion_to_win = count_scores(champions, games)
-
+    print("Wimbledon Champions: ")
+    for champion, win in champion_to_win.items():
+        print(f"{champion} {win}")
+    print("")
+    print("These 12 countries have won Wimbledon: ")
+    for country in countries:
+        if country != countries[-1]:
+            print(country, end=", ")
+        else:
+            print(country)
 
 def create_games_list():
     games = []
