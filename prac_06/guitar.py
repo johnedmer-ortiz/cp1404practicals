@@ -5,7 +5,7 @@ Actual:
 """
 
 
-class Guitars:
+class Guitar:
     """Represents a guitar"""
 
     def __init__(self, name="", year=0, cost=0):
