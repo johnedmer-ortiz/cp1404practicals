@@ -9,8 +9,17 @@ print("My guitars!")
 guitars = []
 
 name = input("Name: ")
-year = int(input("Year: "))
-cost = float(input("Cost: $"))
+if name != "":
+    year = int(input("Year: "))
+    cost = float(input("Cost: $"))
+    guitars.append(Guitar(name, year, cost))
 
-guitars.append(Guitar(name, year, cost))
+while name != "":
+
+    name = input("Name: ")
+    if name != "":
+        year = int(input("Year: "))
+        cost = float(input("Cost: $"))
+        guitars.append(Guitar(name, year, cost))
+
 
