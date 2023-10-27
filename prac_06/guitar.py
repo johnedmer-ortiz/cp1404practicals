@@ -20,4 +20,6 @@ class Guitars:
 
     def get_age(self):
         """Returns age of guitar relative to year 2023"""
-        return f"in 2023 the {self.name} is: 2023 - {self.year} = {2023 - self.year}"
+        return 2023 - self.year
+
+
