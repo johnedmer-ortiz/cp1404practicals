@@ -19,4 +19,6 @@ def main():
     print(f"The limo has a fuel level of {limo.fuel}")
     print(f"The limo has been driven a distance of {limo.drive(115)}")
 
+    print(limo)
+
 main()
