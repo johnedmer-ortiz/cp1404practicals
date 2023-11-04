@@ -39,6 +39,7 @@ def filter_by_date(projects):
     filtered.sort()
 
     for project in filtered:
+        project.start_date = str(project.start_date.strftime(date_format))
         print(
             f"\t{project.name}, start: {project.start_date}, priority {project.priority}, estimate: ${project.cost}, completion: {project.completion_percent}%")
 
