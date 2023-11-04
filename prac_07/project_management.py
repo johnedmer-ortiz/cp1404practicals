@@ -26,6 +26,13 @@ def main():
 def display_projects(projects):
     """Displays projects in priority order"""
     unfinished_projects, finished_projects = sort_completion(projects)
+    print("Incomplete Projects:")
+    for project in unfinished_projects.sort():
+        print(
+            f"- {project.name}, start: {project.start_date}, priority {project.priority}, estimate: ${project.cost}, completion: {project.completion_percent}")
+    for project in finished_projects.sort():
+        print(
+            f"- {project.name}, start: {project.start_date}, priority {project.priority}, estimate: ${project.cost}, completion: {project.completion_percent}")
 
 
 def sort_completion(projects):
@@ -44,6 +51,7 @@ def load_project(projects):
         for line in in_file:
             project = line.strip().split("\t")
             projects.append(Project(project[0], project[1], project[2], project[3], project[4]))
+    print(f"Project loaded from {file_name}")
 
 
 def save_project():

@@ -8,7 +8,7 @@ class Project:
 
     def __init__(self, name, start_date, priority, cost, completion_percent):
         self.name = name
-        self.star_date = start_date
+        self.start_date = start_date
         self.priority = priority
         self.cost = cost
         self.completion_percent = completion_percent
