@@ -26,6 +26,8 @@ def main():
             add_project(projects)
         elif menu_input == "U":
             update_project(projects)
+        else:
+            print("Invalid menu choice. Try again.")
         display_menu()
         menu_input = get_menu_input()
     print("Thank you for using custom-built project management software.")
