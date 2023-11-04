@@ -14,7 +14,7 @@ def main():
     projects = []
     display_menu()
     menu_input = get_menu_input()
-    while menu_input != "":
+    while menu_input != "Q":
         if menu_input == "L":
             load_project(projects)
         elif menu_input == "S":
@@ -29,7 +29,7 @@ def main():
             update_project(projects)
         display_menu()
         menu_input = get_menu_input()
-
+    print("Thank you for using custom-built project management software.")
 
 def update_project(projects):
     """Updates completion percent and priority of a project"""
@@ -41,6 +41,7 @@ def update_project(projects):
         f"{projects[choice].name}, start: {projects[choice].start_date}, priority {projects[choice].priority}, estimate: ${projects[choice].cost}, completion: {projects[choice].completion_percent}%")
     projects[choice].completion_percent = float(input("New Percentage: "))
     projects[choice].priority = int(input("New Priority: "))
+
 
 def add_project(projects):
     """Add project to projects object list"""
