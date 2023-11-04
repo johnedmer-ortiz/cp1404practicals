@@ -128,14 +128,19 @@ def load_project(projects):
 
 def save_project(projects):
     """Saves project to a text file"""
-    file_name = input("Enter project file name: ")
-    with open(file_name, "w") as out_file:
-        out_file.write("Name\tStart Date\tPriority\tCost Estimate\tCompletion Percentage\n")
-        for project in projects:
-            out_file.write(f"{project.name}\t{project.start_date}\t{project.priority}"
-                           f"\t{project.cost}\t{project.completion_percent}\n")
+    bad_save_file = True
+    while bad_save_file:
+        try:
+            file_name = input("Enter project file name: ")
+            with open(file_name, "w") as out_file:
+                out_file.write("Name\tStart Date\tPriority\tCost Estimate\tCompletion Percentage\n")
+                for project in projects:
+                    out_file.write(f"{project.name}\t{project.start_date}\t{project.priority}"
+                                   f"\t{project.cost}\t{project.completion_percent}\n")
+            bad_save_file = False
+        except FileNotFoundError:
+            print("Invalid save file name. Try again.")
     print(f"Projects saved to {file_name}")
-
 
 def display_menu():
     """Displays menu"""
