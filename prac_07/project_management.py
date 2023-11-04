@@ -69,9 +69,15 @@ def add_project(projects):
 
 def filter_by_date(projects):
     """Filters projects by date"""
-    filter_date = input("Show projects that start after date (dd/mm/yy): ")
-    date_format = "%d/%m/%Y"
-    filter_date = datetime.strptime(filter_date, date_format)
+    bad_date = True
+    while bad_date:
+        try:
+            filter_date = input("Show projects that start after date (dd/mm/yy): ")
+            date_format = "%d/%m/%Y"
+            filter_date = datetime.strptime(filter_date, date_format)
+            bad_date = False
+        except ValueError:
+            print("Invalid date. Try Again")
 
     filtered = [project for project in projects if datetime.strptime(project.start_date, date_format) > filter_date]
     for project in filtered:
@@ -141,6 +147,7 @@ def save_project(projects):
         except FileNotFoundError:
             print("Invalid save file name. Try again.")
     print(f"Projects saved to {file_name}")
+
 
 def display_menu():
     """Displays menu"""
