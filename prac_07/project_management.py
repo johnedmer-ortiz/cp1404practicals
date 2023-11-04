@@ -9,11 +9,22 @@ from project import Project
 
 def main():
     """Main function. Program starting point"""
+
     display_menu()
     menu_input = get_menu_input()
     while menu_input != "":
         if menu_input == "L":
-            print("Test")
+            file_in = load_project()
+        menu_input = get_menu_input()
+
+
+def load_project():
+    """Reads projects from chosen txt file"""
+    file_name = input("Enter project file name: ")
+    file_in = open(file_name, "r")
+    print(f"Projects from {file_name} loaded.")
+    return file_in
+
 
 def display_menu():
     """Displays menu"""
