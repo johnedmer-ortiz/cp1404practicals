@@ -59,12 +59,18 @@ def update_project(projects):
 def add_project(projects):
     """Add project to projects object list"""
     print("Let's add a new project")
-    name = input("Project name: ")
-    start_date = input("Start date (dd/mm/yyyy): ")
-    priority = int(input("Priority: "))
-    cost = float(input("Cost estimate: $"))
-    completion_percent = float(input("Percent complete: "))
-    projects.append(Project(name, start_date, priority, cost, completion_percent))
+    bad_project_details = True
+    while bad_project_details:
+        try:
+            name = input("Project name: ")
+            start_date = input("Start date (dd/mm/yyyy): ")
+            priority = int(input("Priority: "))
+            cost = float(input("Cost estimate: $"))
+            completion_percent = float(input("Percent complete: "))
+            projects.append(Project(name, start_date, priority, cost, completion_percent))
+            bad_project_details = False
+        except ValueError:
+            print("Invalid project info. Try again.")
 
 
 def filter_by_date(projects):
