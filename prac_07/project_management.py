@@ -10,7 +10,10 @@ from project import Project
 def main():
     """Main function. Program starting point"""
     display_menu()
-
+    menu_input = get_menu_input()
+    while menu_input != "":
+        if menu_input == "L":
+            print("Test")
 
 def display_menu():
     """Displays menu"""
@@ -21,6 +24,11 @@ def display_menu():
     print("- (A)dd new project")
     print("- (U)pdate project")
     print("- (Q)uit")
+
+
+def get_menu_input():
+    """Prompts user for menu input"""
+    return input(">>> ").upper()
 
 
 main()
