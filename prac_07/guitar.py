@@ -19,6 +19,7 @@ class Guitar:
         return f"{self.name} ({self.year}) : {self.cost}"
 
     def __lt__(self, guitar):
+        """Redefinition of < for sorting purposes"""
         return self.year < guitar.year
 
     def get_age(self):
