@@ -25,6 +25,7 @@ def main():
             filter_by_date(projects)
         elif menu_input == "A":
             add_project(projects)
+        display_menu()
         menu_input = get_menu_input()
 
 
@@ -41,7 +42,7 @@ def add_project(projects):
 
 def filter_by_date(projects):
     """Filters projects by date"""
-    filter_date = input("Show projects that start after date (dd/mm/yy):")
+    filter_date = input("Show projects that start after date (dd/mm/yy): ")
     date_format = "%d/%m/%Y"
     filter_date = datetime.strptime(filter_date, date_format)
 
