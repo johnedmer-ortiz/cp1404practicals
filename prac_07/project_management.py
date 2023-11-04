@@ -10,7 +10,6 @@ from datetime import datetime
 
 def main():
     """Main function. Program starting point"""
-
     projects = []
     display_menu()
     menu_input = get_menu_input()
@@ -18,7 +17,7 @@ def main():
         if menu_input == "L":
             load_project(projects)
         elif menu_input == "S":
-            print("test save")
+            save_project(projects)
         elif menu_input == "D":
             display_projects(projects)
         elif menu_input == "F":
@@ -30,6 +29,7 @@ def main():
         display_menu()
         menu_input = get_menu_input()
     print("Thank you for using custom-built project management software.")
+
 
 def update_project(projects):
     """Updates completion percent and priority of a project"""
@@ -107,12 +107,15 @@ def load_project(projects):
     print(f"Project loaded from {file_name}")
 
 
-def save_project():
+def save_project(projects):
     """Saves project to a text file"""
     file_name = input("Enter project file name: ")
-    file_out = open(file_name, "w")
-    print(f"Projects saved to {file_name}")
-    file_out.close()
+    with open(file_name, "w") as out_file:
+        out_file.write("Name\tStart Date\tPriority\tCost Estimate\tCompletion Percentage\n")
+        for project in projects:
+            out_file.write(
+                f"{project.name}\t{project.start_date}\t{project.priority}\t{project.cost}\t{project.completion_percent}\n")
+    printf(f"Projects saved to {file_name}")
 
 
 def display_menu():
