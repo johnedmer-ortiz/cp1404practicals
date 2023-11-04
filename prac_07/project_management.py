@@ -38,7 +38,18 @@ def update_project(projects):
     for i, project in enumerate(projects):
         print(f"{i} {project.name}, start: {project.start_date}, priority {project.priority}, "
               f"estimate: ${project.cost}, completion: {project.completion_percent}%")
-    choice = int(input("Project choice: "))
+
+    bad_choice = True
+    while bad_choice:
+        try:
+            choice = int(input("Project choice: "))
+            if choice > len(projects) or choice < 0:
+                print("Project choice not in the the list. Try again.")
+                continue
+            bad_choice = False
+        except ValueError:
+            print("Project choice input not an integer. Try again.")
+
     print(f"{projects[choice].name}, start: {projects[choice].start_date}, priority {projects[choice].priority}, "
           f"estimate: ${projects[choice].cost}, completion: {projects[choice].completion_percent}%")
     projects[choice].completion_percent = float(input("New Percentage: "))
