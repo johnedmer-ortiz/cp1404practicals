@@ -111,12 +111,18 @@ def sort_projects(projects):
 
 def load_project(projects):
     """Reads projects from chosen txt file"""
-    file_name = input("Enter project file name: ")
-    with open(file_name, "r") as in_file:
-        in_file.readline()
-        for line in in_file:
-            project = line.strip().split("\t")
-            projects.append(Project(project[0], project[1], int(project[2]), project[3], float(project[4])))
+    bad_file_name = True
+    while bad_file_name:
+        try:
+            file_name = input("Enter project file name: ")
+            with open(file_name, "r") as in_file:
+                in_file.readline()
+                for line in in_file:
+                    project = line.strip().split("\t")
+                    projects.append(Project(project[0], project[1], int(project[2]), project[3], float(project[4])))
+            bad_file_name = False
+        except FileNotFoundError:
+            print("File not found. Try again.")
     print(f"Project loaded from {file_name}")
 
 
