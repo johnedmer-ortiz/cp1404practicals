@@ -1,7 +1,7 @@
 """
 CP1404 - prac_07_feedback - project_management.py
 Estimated finish time: 2 hours
-Actual finish time:
+Actual finish time: 5 hours 36 minutes
 """
 
 from project import Project
