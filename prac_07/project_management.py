@@ -15,10 +15,25 @@ def main():
     menu_input = get_menu_input()
     while menu_input != "":
         if menu_input == "L":
-            load_project()
+            load_project(projects)
         elif menu_input == "S":
             print("test save")
+        elif menu_input == "D":
+            display_projects(projects)
         menu_input = get_menu_input()
+
+
+def display_projects(projects):
+    """Displays projects in priority order"""
+    unfinished_projects, finished_projects = sort_completion(projects)
+
+
+def sort_completion(projects):
+    """Sorts projects by completion"""
+    unfinished_projects = [project for project in projects if int(project.completion_percent) < 100]
+    finished_projects = [project for project in projects if project not in unfinished_projects]
+    print("Unfinished projects:")
+    return unfinished_projects, finished_projects
 
 
 def load_project(projects):
