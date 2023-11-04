@@ -10,21 +10,25 @@ from project import Project
 def main():
     """Main function. Program starting point"""
 
+    projects = []
     display_menu()
     menu_input = get_menu_input()
     while menu_input != "":
         if menu_input == "L":
-            file_in = load_project()
-            file_in.close()
+            load_project()
+        elif menu_input == "S":
+            print("test save")
         menu_input = get_menu_input()
 
 
-def load_project():
+def load_project(projects):
     """Reads projects from chosen txt file"""
     file_name = input("Enter project file name: ")
-    file_in = open(file_name, "r")
-    print(f"Projects from {file_name} loaded.")
-    return file_in
+    with open(file_name, "r") as in_file:
+        in_file.readline()
+        for line in in_file:
+            project = line.strip().split("\t")
+            projects.append(Project(project[0], project[1], project[2], project[3], project[4]))
 
 
 def save_project():
