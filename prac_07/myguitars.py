@@ -15,6 +15,14 @@ def main():
     add_guitars(my_guitars)
     sort_guitars(my_guitars)
     display_guitars(my_guitars)
+    save_guitars(my_guitars)
+
+
+def save_guitars(my_guitars):
+    """Updates guitars.csv file"""
+    with open(FILE_NAME, "w") as out_file:
+        for guitar in my_guitars:
+            out_file.write(f"{guitar.name},{guitar.year},{guitar.cost}\n")
 
 
 def add_guitars(my_guitars):

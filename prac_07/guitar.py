@@ -16,7 +16,7 @@ class Guitar:
 
     def __str__(self):
         """Returns guitar details"""
-        return f"{self.name} ({self.year}) : {self.cost}"
+        return f"{self.name} ({self.year}) : ${self.cost}"
 
     def __lt__(self, guitar):
         """Redefine of < for sorting purposes"""
