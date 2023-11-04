@@ -34,11 +34,11 @@ def main():
 def update_project(projects):
     """Updates completion percent and priority of a project"""
     for i, project in enumerate(projects):
-        print(
-            f"{i} {project.name}, start: {project.start_date}, priority {project.priority}, estimate: ${project.cost}, completion: {project.completion_percent}%")
+        print(f"{i} {project.name}, start: {project.start_date}, priority {project.priority}, "
+              f"estimate: ${project.cost}, completion: {project.completion_percent}%")
     choice = int(input("Project choice: "))
-    print(
-        f"{projects[choice].name}, start: {projects[choice].start_date}, priority {projects[choice].priority}, estimate: ${projects[choice].cost}, completion: {projects[choice].completion_percent}%")
+    print(f"{projects[choice].name}, start: {projects[choice].start_date}, priority {projects[choice].priority}, "
+          f"estimate: ${projects[choice].cost}, completion: {projects[choice].completion_percent}%")
     projects[choice].completion_percent = float(input("New Percentage: "))
     projects[choice].priority = int(input("New Priority: "))
 
@@ -68,8 +68,8 @@ def filter_by_date(projects):
 
     for project in filtered:
         project.start_date = str(project.start_date.strftime(date_format))
-        print(
-            f"\t{project.name}, start: {project.start_date}, priority {project.priority}, estimate: ${project.cost}, completion: {project.completion_percent}%")
+        print(f"\t{project.name}, start: {project.start_date}, priority {project.priority}, "
+              f"estimate: ${project.cost}, completion: {project.completion_percent}%")
 
 
 def display_projects(projects):
@@ -77,12 +77,12 @@ def display_projects(projects):
     unfinished_projects, finished_projects = sort_projects(projects)
     print("Incomplete projects:")
     for project in unfinished_projects:
-        print(
-            f"\t{project.name}, start: {project.start_date}, priority {project.priority}, estimate: ${project.cost}, completion: {project.completion_percent}%")
+        print(f"\t{project.name}, start: {project.start_date}, priority {project.priority}, "
+              f"estimate: ${project.cost}, completion: {project.completion_percent}%")
     print("Completed projects:")
     for project in finished_projects:
-        print(
-            f"\t{project.name}, start: {project.start_date}, priority {project.priority}, estimate: ${project.cost}, completion: {project.completion_percent}%")
+        print(f"\t{project.name}, start: {project.start_date}, priority {project.priority}, "
+              f"estimate: ${project.cost}, completion: {project.completion_percent}%")
 
 
 def sort_projects(projects):
@@ -113,9 +113,9 @@ def save_project(projects):
     with open(file_name, "w") as out_file:
         out_file.write("Name\tStart Date\tPriority\tCost Estimate\tCompletion Percentage\n")
         for project in projects:
-            out_file.write(
-                f"{project.name}\t{project.start_date}\t{project.priority}\t{project.cost}\t{project.completion_percent}\n")
-    printf(f"Projects saved to {file_name}")
+            out_file.write(f"{project.name}\t{project.start_date}\t{project.priority}"
+                           f"\t{project.cost}\t{project.completion_percent}\n")
+    print(f"Projects saved to {file_name}")
 
 
 def display_menu():
