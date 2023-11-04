@@ -23,7 +23,20 @@ def main():
             display_projects(projects)
         elif menu_input == "F":
             filter_by_date(projects)
+        elif menu_input == "A":
+            add_project(projects)
         menu_input = get_menu_input()
+
+
+def add_project(projects):
+    """Add project to projects object list"""
+    print("Let's add a new project")
+    name = input("Project name: ")
+    start_date = input("Start date (dd/mm/yyyy): ")
+    priority = int(input("Priority: "))
+    cost = float(input("Cost estimate: $"))
+    completion_percent = float(input("Percent complete: "))
+    projects.append(Project(name, start_date, priority, cost, completion_percent))
 
 
 def filter_by_date(projects):
