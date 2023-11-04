@@ -24,22 +24,24 @@ def main():
 
 
 def display_projects(projects):
-    """Displays projects in priority order"""
+    """Displays completed and uncompleted projects"""
     unfinished_projects, finished_projects = sort_completion(projects)
-    print("Incomplete Projects:")
-    for project in unfinished_projects.sort():
+    print("Incomplete projects:")
+    for project in unfinished_projects:
         print(
-            f"- {project.name}, start: {project.start_date}, priority {project.priority}, estimate: ${project.cost}, completion: {project.completion_percent}")
-    for project in finished_projects.sort():
+            f"- {project.name}, start: {project.start_date}, priority {project.priority}, estimate: ${project.cost}, completion: {project.completion_percent}%")
+    print("Completed projects:")
+    for project in finished_projects:
         print(
-            f"- {project.name}, start: {project.start_date}, priority {project.priority}, estimate: ${project.cost}, completion: {project.completion_percent}")
+            f"- {project.name}, start: {project.start_date}, priority {project.priority}, estimate: ${project.cost}, completion: {project.completion_percent}%")
 
 
 def sort_completion(projects):
-    """Sorts projects by completion"""
+    """Sorts projects by completion and priority"""
     unfinished_projects = [project for project in projects if int(project.completion_percent) < 100]
     finished_projects = [project for project in projects if project not in unfinished_projects]
-    print("Unfinished projects:")
+    unfinished_projects.sort()
+    finished_projects.sort()
     return unfinished_projects, finished_projects
 
 
@@ -50,7 +52,7 @@ def load_project(projects):
         in_file.readline()
         for line in in_file:
             project = line.strip().split("\t")
-            projects.append(Project(project[0], project[1], project[2], project[3], project[4]))
+            projects.append(Project(project[0], project[1], int(project[2]), project[3], float(project[4])))
     print(f"Project loaded from {file_name}")
 
 
