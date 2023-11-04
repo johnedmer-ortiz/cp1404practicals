@@ -25,9 +25,22 @@ def main():
             filter_by_date(projects)
         elif menu_input == "A":
             add_project(projects)
+        elif menu_input == "U":
+            update_project(projects)
         display_menu()
         menu_input = get_menu_input()
 
+
+def update_project(projects):
+    """Updates completion percent and priority of a project"""
+    for i, project in enumerate(projects):
+        print(
+            f"{i} {project.name}, start: {project.start_date}, priority {project.priority}, estimate: ${project.cost}, completion: {project.completion_percent}%")
+    choice = int(input("Project choice: "))
+    print(
+        f"{projects[choice].name}, start: {projects[choice].start_date}, priority {projects[choice].priority}, estimate: ${projects[choice].cost}, completion: {projects[choice].completion_percent}%")
+    projects[choice].completion_percent = float(input("New Percentage: "))
+    projects[choice].priority = int(input("New Priority: "))
 
 def add_project(projects):
     """Add project to projects object list"""
