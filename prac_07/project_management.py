@@ -58,6 +58,8 @@ def display_projects(projects):
 
 def sort_projects(projects):
     """Sorts projects by completion and priority"""
+    for project in projects:
+        project.sort_flag = "priority"
     unfinished_projects = [project for project in projects if int(project.completion_percent) < 100]
     finished_projects = [project for project in projects if project not in unfinished_projects]
     unfinished_projects.sort()
