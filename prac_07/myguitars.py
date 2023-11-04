@@ -11,6 +11,11 @@ def main():
     """Main function. Program starting point"""
     my_guitars = read_guitars()
     sort_guitars(my_guitars)
+    display_guitars(my_guitars)
+
+
+def display_guitars(my_guitars):
+    """Display guitars and details"""
     for guitar in my_guitars:
         print(guitar)
 
