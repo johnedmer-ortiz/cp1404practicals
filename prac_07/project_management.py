@@ -15,6 +15,7 @@ def main():
     while menu_input != "":
         if menu_input == "L":
             file_in = load_project()
+            file_in.close()
         menu_input = get_menu_input()
 
 
@@ -24,6 +25,14 @@ def load_project():
     file_in = open(file_name, "r")
     print(f"Projects from {file_name} loaded.")
     return file_in
+
+
+def save_project():
+    """Saves project to a text file"""
+    file_name = input("Enter project file name: ")
+    file_out = open(file_name, "w")
+    print(f"Projects saved to {file_name}")
+    file_out.close()
 
 
 def display_menu():
