@@ -5,6 +5,7 @@ Actual finish time:
 """
 
 from project import Project
+from datetime import datetime
 
 
 def main():
@@ -27,6 +28,19 @@ def main():
 
 def filter_by_date(projects):
     """Filters projects by date"""
+    filter_date = input("Show projects that start after date (dd/mm/yy):")
+    date_format = "%d/%m/%Y"
+    filter_date = datetime.strptime(filter_date, date_format)
+
+    filtered = [project for project in projects if datetime.strptime(project.start_date, date_format) > filter_date]
+    for project in filtered:
+        project.sort_flag = "date"
+        project.start_date = datetime.strptime(project.start_date, date_format)
+    filtered.sort()
+
+    for project in filtered:
+        print(
+            f"\t{project.name}, start: {project.start_date}, priority {project.priority}, estimate: ${project.cost}, completion: {project.completion_percent}%")
 
 
 def display_projects(projects):
@@ -35,11 +49,11 @@ def display_projects(projects):
     print("Incomplete projects:")
     for project in unfinished_projects:
         print(
-            f"- {project.name}, start: {project.start_date}, priority {project.priority}, estimate: ${project.cost}, completion: {project.completion_percent}%")
+            f"\t{project.name}, start: {project.start_date}, priority {project.priority}, estimate: ${project.cost}, completion: {project.completion_percent}%")
     print("Completed projects:")
     for project in finished_projects:
         print(
-            f"- {project.name}, start: {project.start_date}, priority {project.priority}, estimate: ${project.cost}, completion: {project.completion_percent}%")
+            f"\t{project.name}, start: {project.start_date}, priority {project.priority}, estimate: ${project.cost}, completion: {project.completion_percent}%")
 
 
 def sort_projects(projects):
