@@ -20,12 +20,18 @@ def main():
             print("test save")
         elif menu_input == "D":
             display_projects(projects)
+        elif menu_input == "F":
+            filter_by_date(projects)
         menu_input = get_menu_input()
+
+
+def filter_by_date(projects):
+    """Filters projects by date"""
 
 
 def display_projects(projects):
     """Displays completed and uncompleted projects"""
-    unfinished_projects, finished_projects = sort_completion(projects)
+    unfinished_projects, finished_projects = sort_projects(projects)
     print("Incomplete projects:")
     for project in unfinished_projects:
         print(
@@ -36,7 +42,7 @@ def display_projects(projects):
             f"- {project.name}, start: {project.start_date}, priority {project.priority}, estimate: ${project.cost}, completion: {project.completion_percent}%")
 
 
-def sort_completion(projects):
+def sort_projects(projects):
     """Sorts projects by completion and priority"""
     unfinished_projects = [project for project in projects if int(project.completion_percent) < 100]
     finished_projects = [project for project in projects if project not in unfinished_projects]
