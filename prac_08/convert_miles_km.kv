@@ -3,8 +3,8 @@ BoxLayout:
     BoxLayout:
         orientation: 'horizontal'
         TextInput:
+            id: miles_input
             size_hint_x: 0.8
-            text: 'Enter distance'
             font_size: 40
         BoxLayout:
             orientation: 'vertical'
@@ -18,7 +18,8 @@ BoxLayout:
     Button:
         text: 'Convert miles to km'
         font_size: 35
+        on_press: app.handle_calculate()
     Label:
-        text: 'test'
+        text: app.output_distance # bind output_distance property to label, making it react to "real-time" changes
         color: (1,1,0,1)
         font_size: 50
