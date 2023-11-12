@@ -18,13 +18,25 @@ class DistanceConverter(App):
         return self.root
 
     def handle_calculate(self):
-        self.output_distance = f"{float(self.root.ids.miles_input.text) * CONV_FACTOR:.2f}"
+        try:  # sets output to 0.0 when calc button is pressed and invalid input is entered
+            self.output_distance = f"{float(self.root.ids.miles_input.text) * CONV_FACTOR:.2f}"
+        except ValueError:
+            self.output_distance = "0.0"
 
     def handle_increment(self, increment):
-        if increment == 1:
-            self.root.ids.miles_input.text = f"{float(self.root.ids.miles_input.text) + 1}"
-        else:
-            self.root.ids.miles_input.text = f"{float(self.root.ids.miles_input.text) - 1}"
+        try:  # try-except block to handle increments when input is invalid
+            if increment == 1:
+                if self.root.ids.miles_input.text == "":  # checks TextInput field if empty
+                    self.root.ids.miles_input.text = "1"
+                else:
+                    self.root.ids.miles_input.text = f"{float(self.root.ids.miles_input.text) + 1}"
+            else:
+                if self.root.ids.miles_input.text == "":
+                    self.root.ids.miles_input.text = "-1"
+                else:
+                    self.root.ids.miles_input.text = f"{float(self.root.ids.miles_input.text) - 1}"
+        except ValueError:
+            pass
 
 
 DistanceConverter().run()
