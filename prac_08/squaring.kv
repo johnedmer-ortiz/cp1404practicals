@@ -1,6 +1,6 @@
-BoxLayout
+BoxLayout: # top level box layout
     orientation: 'vertical'
-    BoxLayout:
+    BoxLayout: # child of top level box layout
         orientation: 'horizontal'
         TextInput:
             id: input_number
@@ -15,5 +15,5 @@ BoxLayout
             id: output_label
             font_size: 48
             color: (1, 0.5, 0.5, 1)
-    Label:
-        text: 'Enter number press square'
+    Label: # child of top level box layout
+        text: 'Enter a number and press "Square"'
