@@ -7,7 +7,7 @@ from taxi import Taxi
 
 def main():
     """Main function for testing Taxi subclass"""
-    my_taxi = Taxi("Prius 1", 100, 1.23)
+    my_taxi = Taxi("Prius 1", 100)
     # initialises the first two parameters using Car class
     # initialises the third parameter using taxi subclass
 
