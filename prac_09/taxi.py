@@ -2,7 +2,7 @@
 CP1404/CP5632 Practical
 Car class
 """
-from prac_09.car import Car
+from car import Car
 
 
 class Taxi(Car):
@@ -31,3 +31,7 @@ class Taxi(Car):
         distance_driven = super().drive(distance)
         self.current_fare_distance += distance_driven
         return distance_driven
+
+
+newCar = Taxi("Prius", 50, 20)
+print(newCar)
