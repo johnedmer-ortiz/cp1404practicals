@@ -20,4 +20,6 @@ class UnreliableCar(Car):
             else:
                 self.fuel -= distance
             self._odometer += distance
-            return distance
+        else:
+            print("Unable to drive.")
+        return distance
