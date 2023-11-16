@@ -10,6 +10,7 @@ TAXI_CHOICES = ("q)uit, c)hoose taxi, d)rive\n"
 
 
 def main():
+    """Directs inputs to appropriate methods"""
     print("Let's drive!")
     taxis = create_taxis()
     taxi_choice = ""
@@ -31,22 +32,21 @@ def main():
 
 
 def create_taxis():
+    """Initialises list of taxis"""
     taxis = [Taxi("Commodore", 100), SilverServiceTaxi("Mustang", 100, 2), SilverServiceTaxi("Corvette", 200, 3)]
     return taxis
 
 
 def select_taxi(taxis, exit_flag):
+    """Acquire taxi selection"""
     for i, taxi in enumerate(taxis):
         print(f"{i} - {taxi}")
     if not exit_flag:
         return int(input("Choose taxi: "))
 
 
-def calculate_bill(taxi):
-    return taxi.get_fare()
-
-
 def drive(taxi):
+    """Returns fare base on drive distance"""
     distance = int(input("Drive how far? "))
     taxi.drive(distance)
     print(f"Your {taxi.name} trip cost you ${taxi.get_fare():.2f}")
@@ -54,6 +54,7 @@ def drive(taxi):
 
 
 def exit_simulator(fare, taxis):
+    """Displays total trip details and update taxi kms"""
     print(f"Total trip cost: ${fare:.2f}")
     print("Taxis are now:")
     select_taxi(taxis, True)
