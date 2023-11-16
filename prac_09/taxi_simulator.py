@@ -24,7 +24,7 @@ def create_taxis():
     return taxis
 
 
-def display_taxis(taxis):
+def select_taxi(taxis):
     for i, taxi in enumerate(taxis):
         print(f"{i} - {taxi}")
 
