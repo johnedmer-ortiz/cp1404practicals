@@ -3,7 +3,7 @@ CP1404 - prac_09 band
 """
 
 
-class Band:
+class Band():
 
     def __init__(self, band_name):
         self.band_name = band_name
@@ -17,3 +17,7 @@ class Band:
         for musician in self.musicians:
             band.append(f"{musician}")
         return f"{self.band_name} ({','.join(band)})"
+
+    def play(self):
+        for musician in self.musicians:
+            print(musician.play())
