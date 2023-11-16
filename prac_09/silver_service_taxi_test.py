@@ -11,7 +11,7 @@ def main():
     print(test_taxi)
     test_taxi.drive(18)
     print(test_taxi)
-    print(f"Fare after drive: {test_taxi.get_fare()}")
+    print(f"Fare after drive: {test_taxi.get_fare():.2f}")
 
 
 main()
