@@ -6,6 +6,7 @@ from silver_service_taxi import SilverServiceTaxi
 
 
 def main():
+    """main function for testing SilverServiceTaxi class"""
     test_taxi = SilverServiceTaxi("Limo", 150, 2)
     print(test_taxi)
     test_taxi.drive(18)
