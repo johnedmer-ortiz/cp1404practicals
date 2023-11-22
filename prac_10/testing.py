@@ -3,6 +3,8 @@ CP1404/CP5632 Practical
 Testing demo using assert and doctest
 """
 
+import doctest
+
 from prac_06.car import Car
 
 
@@ -49,11 +51,9 @@ def run_tests():
     assert test_car.fuel == 10, "Car does not set specified fuel"
 
 
-run_tests()
-
 # TODO: 3. Uncomment the following line and run the doctests
 # (PyCharm may see your >>> doctest comments and run doctests anyway.)
-# doctest.testmod()
+
 
 # TODO: 4. Fix the failing is_long_word function
 # (don't change the tests, change the function!)
@@ -67,3 +67,13 @@ run_tests()
 # and one more you decide (one that is valid!)
 # test this and watch the tests fail
 # then write the body of the function so that the tests pass
+
+def format_phrase(phrase):
+    sentence = phrase.capitalize()
+    if sentence[-1] != '.':
+        sentence += '.'
+    return sentence
+
+
+run_tests()
+doctest.testmod()
