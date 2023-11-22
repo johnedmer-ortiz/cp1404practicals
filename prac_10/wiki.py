@@ -6,15 +6,19 @@ import wikipedia
 
 
 def main():
-    query = None
     query = input("Enter search string: ")
     while query != "":
         try:
             suggestion = wikipedia.suggest(query)
-            print(wikipedia.summary(suggestion))
+            page = wikipedia.page(suggestion)
+            print(f"Title: {page.title}")
+            print(f"Summary: {page.summary}")
+            print(f"URL: {page.url}")
         except ValueError:
             print("Wikipedia suggestion returned 'None'. Try a different search query.")
         except wikipedia.DisambiguationError:
             print("Cannot find page. Try again.")
         query = input("Enter search string: ")
+
+
 main()
