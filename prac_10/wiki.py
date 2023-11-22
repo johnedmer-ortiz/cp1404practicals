@@ -6,6 +6,7 @@ import wikipedia
 
 
 def main():
+    """Console version of wikipedia search"""
     query = input("Enter search string: ")
     while query != "":
         try:
