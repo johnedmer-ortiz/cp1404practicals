@@ -6,13 +6,10 @@ import wikipedia
 
 
 def main():
-    query = input("Enter search string: ")
-    suggestion = wikipedia.suggest(query)
-    print(wikipedia.summary(suggestion))
+    query = None
     while query != "":
         query = input("Enter search string: ")
         suggestion = wikipedia.suggest(query)
         print(wikipedia.summary(suggestion))
-
 
 main()
