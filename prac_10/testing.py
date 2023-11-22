@@ -69,6 +69,15 @@ def run_tests():
 # then write the body of the function so that the tests pass
 
 def format_phrase(phrase):
+    """
+    Test if phrase gets capitalised and dot added at the end.
+    >>> format_phrase("hello")
+    'Hello.'
+    >>> format_phrase("It is an ex parrot.")
+    'It is an ex parrot.'
+    >>> format_phrase("extra test.")
+    'Extra test.'
+    """
     sentence = phrase.capitalize()
     if sentence[-1] != '.':
         sentence += '.'
